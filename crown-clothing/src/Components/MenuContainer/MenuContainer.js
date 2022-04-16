@@ -1,8 +1,16 @@
-import './MenuContainer.scss'
+import './MenuContainer.scss';
+import { useContext } from 'react';
+import { DataContext } from '../../Context/DataContext/DataContext';
+import MenuItem from '../MenuItem/MenuItem';
 const MenuContainer = () => {
+    const { data } = useContext(DataContext);
     return ( 
-        <div>
-            <h1>Hi</h1>
+        <div className='menu-container'>
+            {data.map(oneData => {
+                return (
+                    <MenuItem key={oneData.id} imageUrl={oneData.imageUrl} title={oneData.title}/>
+                )
+            })}
         </div>
      );
 }

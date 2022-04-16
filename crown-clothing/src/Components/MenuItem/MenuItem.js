@@ -1,8 +1,9 @@
-import './MenuItem.scss'
-const MenuItem = () => {
+import MenuContent from '../MenuContent/MenuContent';
+import './MenuItem.scss';
+const MenuItem = ({ title, imageUrl }) => {
     return ( 
-        <div>
-
+        <div className='menu-item'>
+            <MenuContent title={ title }/>
         </div>
      );
 }
